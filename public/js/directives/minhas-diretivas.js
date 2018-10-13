@@ -1,20 +1,32 @@
-angular.module('minhasDiretivas',[])
-.directive('meuPainel', function(){
-    
-    //directive directive object
-    var ddo = {};
-    ddo.restric = "AE";
+angular.module('minhasDiretivas', [])
+    .directive('meuPainel', function () {
 
-    ddo.scope = {
-        titulo: '@'
-    };
+        //directive directive object
+        var ddo = {};
+        ddo.restric = "AE";
 
-    //matem os elementos filhos quando carregar o html
-    //para funcionar é preciso marcar qual elemento ira manter os elementos filhos 
-    //com a diretiva ng-transclude
-    ddo.transclude = true;
+        ddo.scope = {
+            titulo: '@'
+        };
 
-    ddo.templateUrl = 'js/directives/meu-painel.html';
+        //matem os elementos filhos quando carregar o html
+        //para funcionar é preciso marcar qual elemento ira manter os elementos filhos 
+        //com a diretiva ng-transclude
+        ddo.transclude = true;
 
-    return ddo;
-});
+        ddo.templateUrl = 'js/directives/meu-painel.html';
+
+        return ddo;
+    })
+    .directive('minhaFoto', function () {
+        return {
+            restrict: "E",
+            scope: {
+                url: "@",
+                titulo: "@"
+            },
+            templateUrl: 'js/directives/minha-foto.html'
+        };
+    })
+
+    ;
